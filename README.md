@@ -4,6 +4,8 @@ A beautiful, customizable layered gradient peak component for React and Next.js.
 
 ![PeakedGradient Builder](https://raw.githubusercontent.com/mutahharmkhan/peaked-gradient/main/gradientbuilder.png)
 
+**[Try the live configurator →](https://helpfulcomps.vercel.app/)**
+
 ## Installation
 
 ```bash
