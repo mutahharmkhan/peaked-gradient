@@ -38,6 +38,7 @@ function MyComponent() {
         ]}
         peakHeight={100}
         pointiness={50}
+        blur={50}
       />
     </div>
   )
@@ -53,6 +54,7 @@ The component fills its parent container (100% width and height), so wrap it in 
 | `colors` | `[string, string, string, string, string]` | Required | 5 hex colors for the gradient layers (lightest to darkest) |
 | `peakHeight` | `number` | `100` | Peak height (0-100). Controls how tall the peak rises. |
 | `pointiness` | `number` | `50` | Sharpness of the peak (0-100). Higher = sharper point. |
+| `blur` | `number` | `50` | Blur amount (0-100). 0 = no blur, 50 = default, 100 = double blur. |
 | `className` | `string` | - | Optional CSS class |
 | `style` | `CSSProperties` | - | Optional inline styles |
 

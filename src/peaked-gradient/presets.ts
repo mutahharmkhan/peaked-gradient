@@ -111,23 +111,28 @@ export function colorTupleToPalette(colors: ColorTuple): ColorPalette {
 }
 
 /**
- * Generate scaled shapes based on master peakHeight and pointiness controls
+ * Generate scaled shapes based on master peakHeight, pointiness, and blur controls
  * - peakHeight: 0-100 where 100 = full base values
  * - pointiness: 0-100 where 50 = base values, can go up to 100 for sharper
+ * - blur: 0-100 where 50 = base blur values, 0 = no blur, 100 = double blur
  */
 export function generateScaledShapes(
   masterPeakHeight: number,
-  masterPointiness: number
+  masterPointiness: number,
+  masterBlur: number = 50
 ): ShapeConfig[] {
   // peakHeight: 0-100 where 100 = 100% of base values
   const peakScale = Math.min(masterPeakHeight, 100) / 100
   // pointiness: 50 = 100% of base, scales proportionally (can exceed base)
   const pointinessScale = masterPointiness / 50
+  // blur: 50 = 100% of base blur values, 0 = no blur, 100 = double blur
+  const blurScale = masterBlur / 50
 
   return BASE_SHAPES.map((baseShape, index) => ({
     ...baseShape,
     peakHeight: Math.min(100, Math.max(0, baseShape.peakHeight * peakScale)),
     pointiness: Math.min(100, Math.max(0, baseShape.pointiness * pointinessScale)),
+    blur: baseShape.blur ? baseShape.blur * blurScale : undefined,
     gradientId: SHAPE_GRADIENT_MAP[index],
   }))
 }

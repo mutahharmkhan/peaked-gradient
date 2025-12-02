@@ -19,6 +19,12 @@ export interface PeakedGradientProps {
    */
   pointiness?: number
 
+  /**
+   * Blur amount (0-100, default 50)
+   * 50 = base blur values, 0 = no blur, 100 = double blur
+   */
+  blur?: number
+
   className?: string
   style?: CSSProperties
 }
