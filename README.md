@@ -2,6 +2,8 @@
 
 A beautiful, customizable layered gradient peak component for React and Next.js. Perfect for hero sections, backgrounds, and visual accents.
 
+![PeakedGradient Builder](https://raw.githubusercontent.com/mutahharmkhan/peaked-gradient/main/gradientbuilder.png)
+
 ## Installation
 
 ```bash
